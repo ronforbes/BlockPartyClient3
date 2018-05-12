@@ -35,3 +35,6 @@ sysinfo.txt
 
 # DS Store
 .DS_Store
+
+# Visual Studio Code
+.vscode
