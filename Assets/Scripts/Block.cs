@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -14,18 +15,33 @@ public enum BlockState {
 	WaitingToEmpty
 }
 
+public class BlockChangedEventArgs : EventArgs {}
+
 public class Block : MonoBehaviour {
-	public int X, Y, Type;
-	public const int TypeCount = 6;
-	public BlockState State;
+	public event EventHandler<BlockChangedEventArgs> OnBlockChanged = (sender, e) => {};
+
+	public int X, Y;
 	
-	// Use this for initialization
-	void Start () {
-		
+	private int type;
+	public int Type {
+		get { return type; }
+		set {
+			if(type != value) {
+				type = value;
+				OnBlockChanged(this, new BlockChangedEventArgs());
+			}
+		}
 	}
-	
-	// Update is called once per frame
-	void Update () {
-		
+	public const int TypeCount = 6;
+
+	private BlockState state;
+	public BlockState State {
+		get { return state; }
+		set {
+			if(state != value) {
+				state = value;
+				OnBlockChanged(this, new BlockChangedEventArgs());
+			}
+		}
 	}
 }

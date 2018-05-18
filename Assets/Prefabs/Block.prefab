@@ -24,6 +24,10 @@ GameObject:
   - component: {fileID: 114936665498378660}
   - component: {fileID: 114135819595220804}
   - component: {fileID: 61779938820888272}
+  - component: {fileID: 114697455644236356}
+  - component: {fileID: 114929951295217342}
+  - component: {fileID: 114847266400971042}
+  - component: {fileID: 114833895459729310}
   m_Layer: 0
   m_Name: Block
   m_TagString: Untagged
@@ -84,6 +88,18 @@ MonoBehaviour:
   TargetState: 0
   TargetType: 0
   Elapsed: 0
+--- !u!114 &114697455644236356
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1438916493111236}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 771dec0863e4b4c40bd570810b5077ac, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Elapsed: 0
 --- !u!114 &114708769334382346
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -97,8 +113,45 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   X: 0
   Y: 0
-  Type: 0
-  State: 0
+--- !u!114 &114833895459729310
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1438916493111236}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f6720e326e8654b0398259771fa3df4f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Elapsed: 0
+  Target: {fileID: 0}
+  JustFell: 0
+--- !u!114 &114847266400971042
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1438916493111236}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3ea4ef62e633f43ea928de488eefe3ec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  DelayDuration: 0
+--- !u!114 &114929951295217342
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1438916493111236}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f9396a74619f44f9e8a086791f2d6bd7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  DelayDuration: 0
+  Elapsed: 0
 --- !u!114 &114936665498378660
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -161,4 +214,4 @@ SpriteRenderer:
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
-  m_MaskInteraction: 0
+  m_MaskInteraction: 1

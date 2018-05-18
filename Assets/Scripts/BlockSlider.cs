@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class BlockSlider : MonoBehaviour {
     Block block;
-    //MatchDetector matchDetector;
+    MatchDetector matchDetector;
 
 	public enum SlideDirection
     {
@@ -23,7 +23,7 @@ public class BlockSlider : MonoBehaviour {
     void Awake()
     {
         block = GetComponent<Block>();
-        //matchDetector = GameObject.Find("Board").GetComponent<MatchDetector>();
+        matchDetector = GameObject.Find("Board").GetComponent<MatchDetector>();
     }
 	
     public void Slide(SlideDirection direction)
@@ -56,7 +56,7 @@ public class BlockSlider : MonoBehaviour {
 
                 if (block.State == BlockState.Idle)
                 {
-                    //matchDetector.RequestMatchDetection(block);
+                    matchDetector.RequestMatchDetection(block);
                 }
             }
         }

@@ -14,7 +14,6 @@ public class Board : MonoBehaviour {
 			for(int y = 0; y < Rows; y++) {
 				Blocks[x, y] = Instantiate(BlockPrefab, Vector3.zero, Quaternion.identity) as Block;
 				Blocks[x, y].transform.parent = transform;
-				Blocks[x, y].name = "Block[x=" + x.ToString() + ", y=" + y.ToString() + "]";
 				Blocks[x, y].X = x;
 				Blocks[x, y].Y = y;
 			}
