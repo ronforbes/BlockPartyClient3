@@ -4,12 +4,12 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class ScoreChangedEventArgs : EventArgs {}
-public class Scoreboard : MonoBehaviour {
-	static Scoreboard instance;
-	public static Scoreboard Instance {
+public class Score : MonoBehaviour {
+	static Score instance;
+	public static Score Instance {
 		get {
 			if(instance == null) {
-				instance = GameObject.FindObjectOfType<Scoreboard>();
+				instance = GameObject.FindObjectOfType<Score>();
 
 				if(instance != null) {
 					DontDestroyOnLoad(instance.gameObject);
@@ -20,13 +20,13 @@ public class Scoreboard : MonoBehaviour {
 		}
 	}
 
-	int score;
+	int points;
 	public event EventHandler<ScoreChangedEventArgs> OnScoreChanged = (sender, e) => {};
-	public int Score {
-		get { return score; }
+	public int Points {
+		get { return points; }
 		set {
-			if(score != value) {
-				score = value;
+			if(points != value) {
+				points = value;
 				OnScoreChanged(this, new ScoreChangedEventArgs());
 			}
 		}
@@ -52,15 +52,10 @@ public class Scoreboard : MonoBehaviour {
 	}
 	
 	public void Reset() {
-		Score = 0;
+		Points = 0;
 	}
 
 	public void ScoreMatch() {
-		Score += matchValue;
-	}
-
-	// Update is called once per frame
-	void Update () {
-		
+		Points += matchValue;
 	}
 }

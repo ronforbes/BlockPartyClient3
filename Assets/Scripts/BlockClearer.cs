@@ -82,9 +82,9 @@ public class BlockClearer : MonoBehaviour {
                 
                 Elapsed = 0.0f;
 
-                if (Scoreboard.Instance)
+                if (Score.Instance)
                 {
-                    Scoreboard.Instance.ScoreMatch();
+                    Score.Instance.ScoreMatch();
                 }
 
 				/*Color color;

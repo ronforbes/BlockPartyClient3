@@ -8,10 +8,10 @@ public class ScoreRenderer : MonoBehaviour {
 
 	void Awake() {
 		text = GetComponent<Text>();
-		Scoreboard.Instance.OnScoreChanged += HandleScoreChanged;
+		Score.Instance.OnScoreChanged += HandleScoreChanged;
 	}
 
 	void HandleScoreChanged(object sender, ScoreChangedEventArgs e) {
-		text.text = Scoreboard.Instance.Score.ToString();
+		text.text = Score.Instance.Points.ToString();
 	}
 }
