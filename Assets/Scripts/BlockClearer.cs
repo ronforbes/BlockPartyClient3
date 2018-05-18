@@ -82,10 +82,10 @@ public class BlockClearer : MonoBehaviour {
                 
                 Elapsed = 0.0f;
 
-                //if (ScoreManager.Instance)
-                //{
-                //    ScoreManager.Instance.ScoreMatch();
-                //}
+                if (Scoreboard.Instance)
+                {
+                    Scoreboard.Instance.ScoreMatch();
+                }
 
 				/*Color color;
 				switch(block.Type)
