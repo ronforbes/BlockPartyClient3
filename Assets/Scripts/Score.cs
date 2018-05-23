@@ -52,7 +52,8 @@ public class Score : MonoBehaviour {
 	}
 	
 	public void Reset() {
-		Points = 0;
+		points = 0;
+		OnScoreChanged(this, new ScoreChangedEventArgs());
 	}
 
 	public void ScoreMatch() {

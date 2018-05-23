@@ -11,7 +11,19 @@ public class ScoreRenderer : MonoBehaviour {
 		Score.Instance.OnScoreChanged += HandleScoreChanged;
 	}
 
+	void Start() {
+		PopulateScore();
+	}
+
 	void HandleScoreChanged(object sender, ScoreChangedEventArgs e) {
+		PopulateScore();
+	}
+
+	void PopulateScore() {
 		text.text = Score.Instance.Points.ToString();
+	}
+
+	void OnDestroy() {
+		Score.Instance.OnScoreChanged -= HandleScoreChanged;
 	}
 }
