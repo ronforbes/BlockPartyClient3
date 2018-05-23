@@ -37,8 +37,8 @@ public class NetworkManager : MonoBehaviour {
 	}
 
 	void Start() {
-		//socketManager = new SocketManager(new Uri("http://blockpartyserver.herokuapp.com/socket.io/"));
-		socketManager = new SocketManager(new Uri("http://localhost:1337/socket.io/"));
+		socketManager = new SocketManager(new Uri("http://blockpartyserver.herokuapp.com/socket.io/"));
+		//socketManager = new SocketManager(new Uri("http://localhost:1337/socket.io/"));
 		socketManager.Socket.On(SocketIOEventTypes.Connect, HandleServerConnect);
 		socketManager.Socket.On("request state", HandleRequestState);
 		socketManager.Socket.On("player connected", HandlePlayerConnected);
@@ -63,7 +63,7 @@ public class NetworkManager : MonoBehaviour {
 
 	void HandlePlayerConnected(Socket socket, Packet packet, params object[] args) {
 		string name = "System";
-		string message = JSON.Parse(packet.ToString())[1]["name"] + " connected";
+		string message = JSON.Parse(packet.ToString())[1]["name"] + " joined the game";
 
 		Chat.Instance.AddMessage(name, message);
 	}
@@ -92,7 +92,7 @@ public class NetworkManager : MonoBehaviour {
 
 	void HandlePlayerDisconnected(Socket socket, Packet packet, params object[] args) {
 		string name = "System";
-		string message = JSON.Parse(packet.ToString())[1]["name"] + " disconnected";
+		string message = JSON.Parse(packet.ToString())[1]["name"] + " left the game";
 
 		Chat.Instance.AddMessage(name, message);
 	}

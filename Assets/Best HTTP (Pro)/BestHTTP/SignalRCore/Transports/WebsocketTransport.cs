@@ -29,8 +29,8 @@ namespace BestHTTP.SignalRCore.Transports
         public string ErrorReason { get; private set; }
 
         public event Action<TransportStates, TransportStates> OnStateChanged;
-        public event Action<string> OnTextData;
-        public event Action<byte[]> OnBinaryData;
+        //public event Action<string> OnTextData;
+        //public event Action<byte[]> OnBinaryData;
 
         private WebSocket.WebSocket webSocket;
         private HubConnection connection;

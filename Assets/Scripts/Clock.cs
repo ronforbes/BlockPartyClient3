@@ -78,15 +78,15 @@ public class Clock : MonoBehaviour {
 		}
 
 		stateDurations = new Dictionary<string, float>();
-		stateDurations.Add("inGame", 15.0f);
-		stateDurations.Add("outOfGame", 15.0f);
+		stateDurations.Add("inGame", 120.0f);
+		stateDurations.Add("outOfGame", 45.0f);
 	}
 
 	// Use this for initialization
 	void Start () {
 		state = "inGame";
 		elapsed = 0.0f;
-		duration = 15.0f;
+		duration = stateDurations[state];
 	}
 
 	public void SetState(string state, float duration, float elapsed) {
